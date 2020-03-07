@@ -110,25 +110,19 @@ fn main() {
                         match col {
                             Value::Object(o) => {
                                 println!("Key metadata {:?}", o);
-                                if let Some(x_v) = o.get("x") {
-                                    if let Value::Number(x_n) = x_v {
-                                        if let Some(x_f) = x_n.as_f64() {
-                                            x += x_f * key.margin.w;
-                                        }
+                                if let Some(Value::Number(x_n)) = o.get("x") {
+                                    if let Some(x_f) = x_n.as_f64() {
+                                        x += x_f * key.margin.w;
                                     }
                                 }
-                                if let Some(w_v) = o.get("w") {
-                                    if let Value::Number(w_n) = w_v {
-                                        if let Some(w_f) = w_n.as_f64() {
-                                            w = w_f;
-                                        }
+                                if let Some(Value::Number(w_n)) = o.get("w") {
+                                    if let Some(w_f) = w_n.as_f64() {
+                                        w = w_f;
                                     }
                                 }
-                                if let Some(h_v) = o.get("h") {
-                                    if let Value::Number(h_n) = h_v {
-                                        if let Some(h_f) = h_n.as_f64() {
-                                            h = h_f;
-                                        }
+                                if let Some(Value::Number(h_n)) = o.get("h") {
+                                    if let Some(h_f) = h_n.as_f64() {
+                                        h = h_f;
                                     }
                                 }
                             },
